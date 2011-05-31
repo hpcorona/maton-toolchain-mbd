@@ -1,0 +1,11 @@
+hello-world:
+ es: Hola Mundo
+ en: Hello World
+
+new-game:
+ es: Nuevo Juego
+ en: New Game
+
+save-game:
+ es: Guardar
+ en: Save

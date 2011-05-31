@@ -1,0 +1,140 @@
+<Bundle atlasPath="ejemplo_atlas.xml">
+  <!-- Fonts -->
+  <Font name="default" fontPath="default.fnt" />
+
+  <!-- Sprites -->
+  <Sprite name="arrowRight1">
+    <Image name="asteroid01" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid02" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid03" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid04" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid05" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid06" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid07" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid08" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid09" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid10" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid11" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid12" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid_explode1" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid_explode2" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid_explode3" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="asteroid_explode4" x="-32" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="intbeam_1" x="0" y="0" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="intbeam_2" x="0" y="0" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="intbeam_3" x="0" y="0" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="intbeam_4" x="0" y="0" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="ship2_1" x="-61" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="ship2_2" x="-61" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="ship2_3" x="-61" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="ship2_4" x="-61" y="-32" alpha="255" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="ship2_hit_1" x="-61" y="-32" alpha="74" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="ship2_hit_2" x="-61" y="-32" alpha="111" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="ship2_hit_3" x="-61" y="-32" alpha="198" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="ship2_hit_4" x="-61" y="-32" alpha="230" rotation="0.0" flipX="false" flipY="false" />
+  </Sprite>
+  <Sprite name="arrowRight1">
+    <Image name="test" x="71" y="65" />
+  </Sprite>
+
+  <!-- Animations -->
+  <Animation name="asteroid">
+    <Frame sprite="asteroid01" time="100" />
+    <Frame sprite="asteroid02" time="100" />
+    <Frame sprite="asteroid03" time="100" />
+    <Frame sprite="asteroid04" time="100" />
+    <Frame sprite="asteroid05" time="100" />
+    <Frame sprite="asteroid06" time="100" />
+    <Frame sprite="asteroid07" time="100" />
+    <Frame sprite="asteroid08" time="100" />
+    <Frame sprite="asteroid09" time="100" />
+    <Frame sprite="asteroid10" time="100" />
+    <Frame sprite="asteroid11" time="100" />
+    <Frame sprite="asteroid12" time="100" />
+  </Animation>
+  <Animation name="explode">
+    <Frame sprite="asteroid_explode1" time="100" />
+    <Frame sprite="asteroid_explode2" time="100" />
+    <Frame sprite="asteroid_explode3" time="100" />
+    <Frame sprite="asteroid_explode4" time="100" />
+    <Frame sprite="&lt; empty &gt;" time="100" />
+  </Animation>
+  <Animation name="beam">
+    <Frame sprite="intbeam_1" time="100" />
+    <Frame sprite="intbeam_2" time="100" />
+    <Frame sprite="intbeam_3" time="100" />
+    <Frame sprite="intbeam_4" time="100" />
+  </Animation>
+  <Animation name="ship">
+    <Frame sprite="ship2_1" time="100" />
+    <Frame sprite="ship2_2" time="100" />
+    <Frame sprite="ship2_3" time="100" />
+    <Frame sprite="ship2_4" time="100" />
+  </Animation>
+  <Animation name="hit">
+    <Frame sprite="ship2_hit_1" time="100" />
+    <Frame sprite="ship2_hit_2" time="100" />
+    <Frame sprite="ship2_hit_3" time="100" />
+    <Frame sprite="ship2_hit_4" time="100" />
+  </Animation>
+
+  <!-- Actors -->
+  <Actor name="spaceship">
+    <Action name="fly" animation="ship" />
+    <Action name="hit" animation="hit" />
+  </Actor>
+</Bundle>
