@@ -11,9 +11,35 @@ import (
 	"io"
 )
 
+// Formato:
+// MBD
+// uint32[4] - Version y Adicional
+// uint32 - sizes length
+// uint32 - dictionary length
+// uint32 - data length
+// sizes {
+//   uint32 - sizes_qty
+//   type[sizes_qty] {
+//     string - name
+//     uint32 - qty
+//   }
+// }
+// dictionary {
+//   uint32 - dictionary_qty
+//   type[dictionary_qty] {
+//     string - name
+//     uint32 - address (on data)
+//   }
+// }
+// data {
+//   * {
+//     string - value (from dictionary)
+//   }
+// }
+
 var counts map[string]int = make(map[string]int)
 var values map[string]string = make(map[string]string)
-var order binary.ByteOrder = binary.BigEndian
+var order binary.ByteOrder = binary.LittleEndian
 
 func purge() {
 	for k, _ := range counts {
@@ -38,7 +64,7 @@ func writeString(w io.Writer, v string) int {
 	writeInt(w, len(bytes))
 	w.Write(bytes)
 
-	return len(bytes)
+	return len(bytes) + 4
 }
 
 func writeBmd(file string) {

@@ -9,3 +9,7 @@ new-game:
 save-game:
  es: Guardar
  en: Save
+
+mensaje:
+ es: Soy un Chingón
+ en: I'm a Chingón
