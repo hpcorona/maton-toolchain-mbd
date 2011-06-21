@@ -127,7 +127,7 @@ func main() {
 		
 		ext := input[idx+1:]
 		
-		if ext == "xml" {
+		if ext == "xml" || ext == "fnt" {
 			parseXml(input)
 		} else {
 			parseLang(input)
