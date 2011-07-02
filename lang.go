@@ -16,7 +16,7 @@ func parseLang(input string) {
 	}
 	
 	curr := ""
-	lines := strings.Split(string(allText), "\n", -1)
+	lines := strings.Split(string(allText), "\n")
 	for i := 0; i < len(lines); i++ {
 		text := strings.Trim(lines[i], " \t")
 		if text == "" {
