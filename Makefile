@@ -5,9 +5,10 @@ TARG = mbd
 GOFILES = \
 	xml.go \
 	lang.go \
+	pos.go \
 	mbd.go
 
 include $(GOROOT)/src/Make.cmd
 
 run: all
-	./mbd test.xml test2.lang
+	./mbd test.xml test2.lang test3.pos

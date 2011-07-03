@@ -112,7 +112,7 @@ func main() {
 	flag.Parse()
 	
 	if flag.NArg() == 0 {
-		fmt.Printf("Usage:\n\tmdb <file.xml | file.lang>\n")
+		fmt.Printf("Usage:\n\tmbd <file.xml | file.fnt | file.lang | file.pos>\n")
 		os.Exit(1)
 	}
 	
@@ -129,6 +129,8 @@ func main() {
 		
 		if ext == "xml" || ext == "fnt" {
 			parseXml(input)
+		} else if ext == "pos" {
+			parsePos(input)
 		} else {
 			parseLang(input)
 		}
