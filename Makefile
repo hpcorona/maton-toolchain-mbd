@@ -1,14 +1,12 @@
 
 include $(GOROOT)/src/Make.inc
 
-TARG = mbd
+TARG = layadd
 GOFILES = \
-	xml.go \
-	lang.go \
 	pos.go \
-	mbd.go
+	layadd.go
 
 include $(GOROOT)/src/Make.cmd
 
 run: all
-	./mbd test.xml test2.lang test3.pos
+	./layadd test.pos ipod4 QVGA 0.325 out.pos
