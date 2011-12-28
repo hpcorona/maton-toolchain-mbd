@@ -9,6 +9,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"io"
+  "path/filepath"
 )
 
 // Formato:
@@ -111,19 +112,22 @@ func writeBmd(file string) {
 func main() {
 	flag.Parse()
 	
-	if flag.NArg() == 0 {
-		fmt.Printf("Usage:\n\tmbd <file.xml | file.fnt | file.lang | file.pos>\n")
+	if flag.NArg() < 2 {
+		fmt.Printf("Usage:\n\tmbd <output_dir> <file.xml | file.fnt | file.lang | file.pos>+\n")
 		os.Exit(1)
 	}
+
+  outdir := flag.Arg(0)
 	
-	for i := 0; i < flag.NArg(); i++ {
+	for i := 1; i < flag.NArg(); i++ {
 		input := flag.Arg(i)
-		output := input + ".mbd"
+    _, filename := filepath.Split(input)
 		
-		idx := strings.LastIndex(input, ".")
+		idx := strings.LastIndex(filename, ".")
 		if idx >= 0 {
-			output = input[0:idx] + ".mbd"
+			filename = filename[0:idx] + ".mbd"
 		}
+    output := filepath.Join(outdir, filename)
 		
 		ext := input[idx+1:]
 		

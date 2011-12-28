@@ -11,4 +11,4 @@ GOFILES = \
 include $(GOROOT)/src/Make.cmd
 
 run: all
-	./mbd test.xml test2.lang test3.pos
+	./mbd ./output test.xml test2.lang test3.pos
