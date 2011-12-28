@@ -129,6 +129,7 @@ func main() {
 		}
     output := filepath.Join(outdir, filename)
 		
+    idx = strings.LastIndex(input, ".")
 		ext := input[idx+1:]
 		
 		if ext == "xml" || ext == "fnt" {
