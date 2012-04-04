@@ -1,15 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"strings"
-	"os"
-	"flag"
 	"bytes"
 	"encoding/binary"
+	"flag"
+	"fmt"
 	"io"
-  "path/filepath"
+	"io/ioutil"
+	"os"
+	"path/filepath"
+	"strings"
 )
 
 // Formato:
@@ -44,24 +44,24 @@ var order binary.ByteOrder = binary.LittleEndian
 
 func purge() {
 	for k, _ := range counts {
-		counts[k] = 0, false
+		delete(counts, k)
 	}
-	
+
 	for k, _ := range values {
-		values[k] = "", false
+		delete(values, k)
 	}
 }
 
 func writeInt(w io.Writer, i int) int {
 	t := uint32(i)
 	binary.Write(w, order, t)
-	
+
 	return 4
 }
 
 func writeString(w io.Writer, v string) int {
 	bytes := []byte(v)
-	
+
 	writeInt(w, len(bytes))
 	w.Write(bytes)
 
@@ -70,28 +70,28 @@ func writeString(w io.Writer, v string) int {
 
 func writeBmd(file string) {
 	fmt.Printf("Wring BMD: %s\n", file)
-	
+
 	sizes := bytes.NewBuffer([]byte(""))
 	dictionary := bytes.NewBuffer([]byte(""))
 	data := bytes.NewBuffer([]byte(""))
-	
+
 	writeInt(sizes, len(counts))
 	for k, v := range counts {
 		writeString(sizes, k)
 		writeInt(sizes, v)
 	}
-	
+
 	var address int = 0
 	writeInt(dictionary, len(values))
 	for k, v := range values {
 		writeString(dictionary, k)
 		writeInt(dictionary, address)
-		
+
 		w := writeString(data, v)
-		
+
 		address += w
 	}
-	
+
 	all := bytes.NewBuffer([]byte("MBD"))
 	writeInt(all, 1) // Version Mayor 1
 	writeInt(all, 0) // Version Menor 0
@@ -103,35 +103,35 @@ func writeBmd(file string) {
 	all.Write(sizes.Bytes())
 	all.Write(dictionary.Bytes())
 	all.Write(data.Bytes())
-	
+
 	ioutil.WriteFile(file, all.Bytes(), 444)
-	
+
 	purge()
 }
 
 func main() {
 	flag.Parse()
-	
+
 	if flag.NArg() < 2 {
 		fmt.Printf("Usage:\n\tmbd <output_dir> <file.xml | file.fnt | file.lang | file.pos>+\n")
 		os.Exit(1)
 	}
 
-  outdir := flag.Arg(0)
-	
+	outdir := flag.Arg(0)
+
 	for i := 1; i < flag.NArg(); i++ {
 		input := flag.Arg(i)
-    _, filename := filepath.Split(input)
-		
+		_, filename := filepath.Split(input)
+
 		idx := strings.LastIndex(filename, ".")
 		if idx >= 0 {
 			filename = filename[0:idx] + ".mbd"
 		}
-    output := filepath.Join(outdir, filename)
-		
-    idx = strings.LastIndex(input, ".")
+		output := filepath.Join(outdir, filename)
+
+		idx = strings.LastIndex(input, ".")
 		ext := input[idx+1:]
-		
+
 		if ext == "xml" || ext == "fnt" {
 			parseXml(input)
 		} else if ext == "pos" {

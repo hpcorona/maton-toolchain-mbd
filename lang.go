@@ -11,7 +11,7 @@ func parseLang(input string) {
 	fmt.Printf("Processing: %s\n", input)
 	allText, err := ioutil.ReadFile(input)
 	if err != nil {
-		fmt.Printf("Error: %s\n", err.String())
+		fmt.Printf("Error: %s\n", err.Error())
 		os.Exit(1)
 	}
 	
