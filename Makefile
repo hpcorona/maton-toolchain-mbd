@@ -1,14 +1,12 @@
 
-include $(GOROOT)/src/Make.inc
 
 TARG = mbd
-GOFILES = \
-	xml.go \
-	lang.go \
-	pos.go \
-	mbd.go
 
-include $(GOROOT)/src/Make.cmd
+all:
+	go build -o $(TARG)
+
+install:
+	cp $(TARG) $(GOROOT)/bin
 
 run: all
 	./mbd ./output test.xml test2.lang test3.pos
